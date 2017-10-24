@@ -18,7 +18,7 @@ public class Clinica {
 
     public Clinica() {
     }
-
+//PRUEBA
     public Clinica(String cod_Clin, String nom_Clin, String Dep_Clin, String Muni_Clin) {
         this.cod_Clin = cod_Clin;
         this.nom_Clin = nom_Clin;
