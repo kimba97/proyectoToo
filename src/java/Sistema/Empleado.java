@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Sistema;
+
+import java.util.Date;
+
+/**
+ *
+ * @author kimba
+ */
+public class Empleado extends Persona{
+    private String puest_Emp;
+    private String cod_Emp;
+    private double salario;
+    private Usuario user;
+
+    public Empleado() {
+    }
+
+    public Empleado(String puest_Emp, String cod_Emp, double salario, Usuario user, String dui, Clinica clinica, String nombre_P, String apel_P, String sexo_P, Date fecha_Nacim, String Munic_P, String Dep_P) {
+        super(dui, clinica, nombre_P, apel_P, sexo_P, fecha_Nacim, Munic_P, Dep_P);
+        this.puest_Emp = puest_Emp;
+        this.cod_Emp = cod_Emp;
+        this.salario = salario;
+        this.user = user;
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
+    
+
+    public String getPuest_Emp() {
+        return puest_Emp;
+    }
+
+    public void setPuest_Emp(String puest_Emp) {
+        this.puest_Emp = puest_Emp;
+    }
+
+    public String getCod_Emp() {
+        return cod_Emp;
+    }
+
+    public void setCod_Emp(String cod_Emp) {
+        this.cod_Emp = cod_Emp;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    
+    
+}
