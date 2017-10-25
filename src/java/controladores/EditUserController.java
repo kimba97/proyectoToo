@@ -2,6 +2,7 @@
 package controladores;
 
 import Sistema.Conectar;
+import Sistema.Encriptacion;
 import Sistema.Usuario;
 import Sistema.UsuarioAddValidar;
 import java.sql.ResultSet;
@@ -52,7 +53,9 @@ public class EditUserController {
                 HttpServletRequest request
         )
     {
+        
         this.usuariosValidar.validate(u, result);
+        u.setPsw(Encriptacion.Encriptar(u.getPsw()));
         if(result.hasErrors())
         {
             ModelAndView mav=new ModelAndView();

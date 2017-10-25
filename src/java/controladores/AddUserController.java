@@ -44,8 +44,9 @@ public class AddUserController {
             SessionStatus status
         )
     {
-        u.setPsw(Encriptacion.Encriptar(u.getPsw()));
+        
         this.usuarioValidar.validate(u, result);
+        u.setPsw(Encriptacion.Encriptar(u.getPsw()));
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
