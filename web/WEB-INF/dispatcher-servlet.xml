@@ -22,6 +22,8 @@
                <prop key="inicio.htm">loginController</prop> 
                <prop key="usuarios.htm">userController</prop>
                <prop key="addUser.htm">addUserController</prop> 
+               <prop key="deleteUser.htm">deleteUserController</prop>
+               <prop key="editUser.htm">editUserController</prop>  
             </props>
         </property>
     </bean>
@@ -34,9 +36,13 @@
     <!--
     The index controller.
     -->
+   
     <bean name="loginController" class="controladores.LoginController"/>
     <bean name="userController" class="controladores.UserController"/>
-     <bean name="addUserController" class="controladores.AddUserController"/>
+    <bean name="addUserController" class="controladores.AddUserController"/>
+    <bean name="deleteUserController" class="controladores.DeleteUserController"/>
+    <bean name="editUserController" class="controladores.EditUserController"/> 
+    
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

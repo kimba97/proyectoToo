@@ -9,11 +9,12 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String usuario, String clave) {
+    public Usuario(String usuario, String psw) {
         this.usuario = usuario;
-        this.psw = clave;
+        this.psw = psw;
     }
 
+   
     public String getUsuario() {
         return usuario;
     }
