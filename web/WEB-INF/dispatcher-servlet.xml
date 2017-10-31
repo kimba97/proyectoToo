@@ -24,6 +24,18 @@
                <prop key="addUser.htm">addUserController</prop> 
                <prop key="deleteUser.htm">deleteUserController</prop>
                <prop key="editUser.htm">editUserController</prop>  
+               <prop key="medicamentos.htm">medicamentoController</prop>
+               <prop key="addMedicamento.htm">addMedicamentoController</prop> 
+               <prop key="deleteMedicamento.htm">deleteMedicamentoController</prop>
+               <prop key="editMedicamento.htm">editMedicamentoController</prop>
+               <prop key="clinicas.htm">clinicaController</prop>
+               <prop key="addClinica.htm">addClinicaController</prop> 
+               <prop key="deleteClinica.htm">deleteClinicaController</prop>
+               <prop key="editClinica.htm">editClinicaController</prop>    
+               <prop key="empleados.htm">empleadoController</prop>
+               <prop key="addEmpleado.htm">addEmpleadoController</prop> 
+               <prop key="deleteEmpleado.htm">deleteEmpleadoController</prop>
+               <prop key="editEmpleado.htm">editEmpleadoController</prop>  
             </props>
         </property>
     </bean>
@@ -42,6 +54,18 @@
     <bean name="addUserController" class="controladores.AddUserController"/>
     <bean name="deleteUserController" class="controladores.DeleteUserController"/>
     <bean name="editUserController" class="controladores.EditUserController"/> 
+    <bean name="medicamentoController" class="controladores.MedicamentoController"/>
+    <bean name="addMedicamentoController" class="controladores.AddMedicamentoController"/>
+    <bean name="deleteMedicamentoController" class="controladores.DeleteMedicamentoController"/>
+    <bean name="editMedicamentoController" class="controladores.EditMedicamentoController"/> 
+    <bean name="clinicaController" class="controladores.ClinicaController"/>
+    <bean name="addClinicaController" class="controladores.AddClinicaController"/>
+    <bean name="deleteClinicaController" class="controladores.DeleteClinicaController"/>
+    <bean name="editClinicaController" class="controladores.EditClinicaController"/> 
+    <bean name="empleadoController" class="controladores.EmpleadoController"/>
+    <bean name="addEmpleadoController" class="controladores.AddEmpleadoController"/>
+    <bean name="deleteEmpleadoController" class="controladores.DeleteEmpleadoController"/>
+    <bean name="editEmpleadoController" class="controladores.EditEmpleadoController"/> 
     
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
