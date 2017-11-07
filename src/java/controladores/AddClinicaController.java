@@ -64,6 +64,8 @@ public class AddClinicaController {
             this.jdbcTemplate.update(
             "insert into clinica (cod_clin,nom_clin,dep_clin,muni_clin) values (?,?,?,?)",c.getCod_Clin(),
             c.getNom_Clin(),c.getDep_Clin(),c.getMuni_Clin());
+            
+            
             return new ModelAndView("redirect:/clinicas.htm");
         
         }

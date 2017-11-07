@@ -12,10 +12,18 @@
         <link rel="stylesheet" href="<c:url value="/public/css/inicio.css" />" />
      </head>
     <body>
-        <form:form method="post" commandName="login" >
-            <form:input type="text" placeholder="usuario" path="usuario" />
-            <form:input type="password" placeholder="contraseña" path="psw" />
-            <input type="submit" value="login">
+        
+        <form:form name="submitForm" method="POST">
+            
+            <div align="center">
+                <div style="color: red">${error}</div>
+                <div>
+                 <input type="text" placeholder="Usuario" name="usuario" />
+                 <input type="password" placeholder="Password" name="psw" />
+                <input type="submit" value="login" />
+               </div> 
+           
+            </div>
         </form:form>
         
     </body>

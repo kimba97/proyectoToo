@@ -1,51 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controladores;
 
-import Sistema.Encriptacion;
 import Sistema.Conectar;
 import Sistema.Usuario;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
-import org.springframework.validation.BindException;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
-public class LoginController extends SimpleFormController {
+@Controller
+public class LoginController {
     private JdbcTemplate jdbcTemplate;
+    
     public LoginController() {
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
-        setCommandClass(Usuario.class);
-        setCommandName("login");
-        
     }
-
-    @Override
-    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) 
-            throws Exception {
-        Usuario user= (Usuario) command;
-        user.setPsw(Encriptacion.Encriptar(user.getPsw()));
-        Usuario s= obtenerUsuario(user.getUsuario());
-        String m=s.getUsuario();
-        String n=s.getPsw();
-        ModelAndView mav;
-        if(user.getUsuario().equalsIgnoreCase(m) && user.getPsw().equalsIgnoreCase(n)){
-            return mav= new ModelAndView("index","user",user);
-        }else 
-            return mav= new ModelAndView("redirect:/inicio.htm");
+    
+    @RequestMapping(value = "/inicio", method = RequestMethod.GET)
+    public String init(Model model) {
+        model.addAttribute("msg", "Please Enter Your Login Details");
+        return "inicio";
+    }
+    
+     @RequestMapping(method = RequestMethod.POST)
+     public String submit(Model model, @ModelAttribute("Usuario") Usuario loginBean) {
+        if ( loginBean.getUsuario()!= null && loginBean.getPsw()!= null) {
+            
+            Usuario u = obtenerUsuario(loginBean.getUsuario());
+            if (loginBean.getUsuario().equals(u.getUsuario()) && loginBean.getPsw().equals(u.getPsw())) {
+                model.addAttribute("msg", "welcome" + loginBean.getUsuario());
+                return "index";
+            } else {
+                model.addAttribute("error", "Datos invalidos.");
+                return "inicio";
+            }
+        
+        } else {
+            model.addAttribute("error", "Por favor ingrese los datos");
+            return "inicio";
+        }
+        
     }
     
     public Usuario obtenerUsuario(String username){
