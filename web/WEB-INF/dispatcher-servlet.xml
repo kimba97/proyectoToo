@@ -35,7 +35,10 @@
                <prop key="empleados.htm">empleadoController</prop>
                <prop key="addEmpleado.htm">addEmpleadoController</prop> 
                <prop key="deleteEmpleado.htm">deleteEmpleadoController</prop>
-               <prop key="editEmpleado.htm">editEmpleadoController</prop>  
+               <prop key="editEmpleado.htm">editEmpleadoController</prop>
+               <prop key="addPersona.htm">addPersonaController</prop>
+               <prop key="addPaciente.htm">addPacienteController</prop>
+               <prop key="addExpediente.htm">addExpedienteController</prop>  
             </props>
         </property>
     </bean>
@@ -65,7 +68,10 @@
     <bean name="empleadoController" class="controladores.EmpleadoController"/>
     <bean name="addEmpleadoController" class="controladores.AddEmpleadoController"/>
     <bean name="deleteEmpleadoController" class="controladores.DeleteEmpleadoController"/>
-    <bean name="editEmpleadoController" class="controladores.EditEmpleadoController"/> 
+    <bean name="editEmpleadoController" class="controladores.EditEmpleadoController"/>
+    <bean name="addPersonaController" class="controladores.AddPersonaController"/> 
+    <bean name="addPacienteController" class="controladores.AddPacienteController"/> 
+    <bean name="addExpedienteController" class="controladores.addExpedienteController"/> 
     
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

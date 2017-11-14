@@ -5,18 +5,18 @@ import java.util.Date;
 
 public class Persona {
     private String dui;
-    private Clinica clinica;
+    private String clinica;
     private String nombre_P;
     private String apel_P;
     private String sexo_P;
-    private Date fecha_Nacim;
+    private String fecha_Nacim;
     private String Munic_P;
     private String Dep_P;
 
     public Persona() {
     }
 
-    public Persona(String dui, Clinica clinica, String nombre_P, String apel_P, String sexo_P, Date fecha_Nacim, String Munic_P, String Dep_P) {
+    public Persona(String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
         this.dui = dui;
         this.clinica = clinica;
         this.nombre_P = nombre_P;
@@ -27,6 +27,8 @@ public class Persona {
         this.Dep_P = Dep_P;
     }
 
+     
+
     public String getDui() {
         return dui;
     }
@@ -35,11 +37,11 @@ public class Persona {
         this.dui = dui;
     }
 
-    public Clinica getClinica() {
+    public String getClinica() {
         return clinica;
     }
 
-    public void setClinica(Clinica clinica) {
+    public void setClinica(String clinica) {
         this.clinica = clinica;
     }
 
@@ -67,11 +69,12 @@ public class Persona {
         this.sexo_P = sexo_P;
     }
 
-    public Date getFecha_Nacim() {
+    public String getFecha_Nacim() {
+        
         return fecha_Nacim;
     }
 
-    public void setFecha_Nacim(Date fecha_Nacim) {
+    public void setFecha_Nacim(String fecha_Nacim) {
         this.fecha_Nacim = fecha_Nacim;
     }
 

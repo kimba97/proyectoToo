@@ -7,16 +7,20 @@ public class SignosVitales {
     private double altura;
     private String pres_Cardi;
     private String pres_art;
+    private String Paciente;
 
     public SignosVitales() {
     }
 
-    public SignosVitales(String temp, double altura, String pres_Cardi, String pres_art) {
+    public SignosVitales(String temp, double altura, String pres_Cardi, String pres_art, String Paciente) {
         this.temp = temp;
         this.altura = altura;
         this.pres_Cardi = pres_Cardi;
         this.pres_art = pres_art;
+        this.Paciente = Paciente;
     }
+
+     
 
     public String getTemp() {
         return temp;
@@ -49,6 +53,16 @@ public class SignosVitales {
     public void setPres_art(String pres_art) {
         this.pres_art = pres_art;
     }
+
+    public String getPaciente() {
+        return Paciente;
+    }
+
+    public void setPaciente(String Paciente) {
+        this.Paciente = Paciente;
+    }
+    
+    
     
     
 }

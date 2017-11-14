@@ -47,7 +47,7 @@ public class EditEmpleadoController {
         String cod_empleado=(request.getParameter("id"));
         Empleado datos=this.selectEmpleado(cod_empleado);
         mav.setViewName("editEmpleado");
-        mav.addObject("empleados",new Empleado(cod_empleado, datos.getPuest_Emp(),datos.getSalario(), datos.getUser(), datos.getDui()));
+    //    mav.addObject("empleados",new Empleado(cod_empleado, datos.getPuest_Emp(),datos.getSalario(), datos.getUser(), datos.getDui()));
         return mav;
     }
     
@@ -69,7 +69,7 @@ public class EditEmpleadoController {
             String cod_empleado=(request.getParameter("id"));
             Empleado datos=this.selectEmpleado(cod_empleado);
             mav.setViewName("editEmpleado");
-            mav.addObject("empleados",new Empleado(cod_empleado, datos.getPuest_Emp(),datos.getSalario(), datos.getUser(), datos.getDui()));
+            //mav.addObject("empleados",new Empleado(cod_empleado, datos.getPuest_Emp(),datos.getSalario(), datos.getUser(), datos.getDui()));
             return mav;
         }else
         {
@@ -99,7 +99,7 @@ public class EditEmpleadoController {
                 public Empleado extractData(ResultSet rs) throws SQLException, DataAccessException {
                     if (rs.next()) {
                         empleado.setCod_Emp(rs.getString("cod_emp"));
-                        empleado.setUser(rs.getString("username"));
+                       // empleado.setUser(rs.getString("username"));
                         empleado.setDui(rs.getString("dui"));
                         empleado.setPuest_Emp(rs.getString("puest_Emp"));
                         empleado.setSalario(rs.getDouble("salario"));

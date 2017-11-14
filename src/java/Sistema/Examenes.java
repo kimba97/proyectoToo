@@ -4,25 +4,21 @@ package Sistema;
 
 public class Examenes {
     private String cod_Ex;
-    private boolean orina;
-    private boolean quim_Sang;
-    private boolean radio;
-    private boolean ultra;
-    private boolean electro;
-    private boolean otros;
+    private String CodExped;
+    private byte archivo;
+    private String descExam;
 
     public Examenes() {
     }
 
-    public Examenes(String cod_Ex, boolean orina, boolean quim_Sang, boolean radio, boolean ultra, boolean electro, boolean otros) {
+    public Examenes(String cod_Ex, String CodExped, byte archivo, String descExam) {
         this.cod_Ex = cod_Ex;
-        this.orina = orina;
-        this.quim_Sang = quim_Sang;
-        this.radio = radio;
-        this.ultra = ultra;
-        this.electro = electro;
-        this.otros = otros;
+        this.CodExped = CodExped;
+        this.archivo = archivo;
+        this.descExam = descExam;
     }
+
+    
 
     public String getCod_Ex() {
         return cod_Ex;
@@ -32,53 +28,31 @@ public class Examenes {
         this.cod_Ex = cod_Ex;
     }
 
-    public boolean isOrina() {
-        return orina;
+    public String getCodExped() {
+        return CodExped;
     }
 
-    public void setOrina(boolean orina) {
-        this.orina = orina;
+    public void setCodExped(String exped) {
+        this.CodExped = exped;
     }
 
-    public boolean isQuim_Sang() {
-        return quim_Sang;
+    public byte getArchivo() {
+        return archivo;
     }
 
-    public void setQuim_Sang(boolean quim_Sang) {
-        this.quim_Sang = quim_Sang;
+    public void setArchivo(byte archivo) {
+        this.archivo = archivo;
     }
 
-    public boolean isRadio() {
-        return radio;
+    public String getDescExam() {
+        return descExam;
     }
 
-    public void setRadio(boolean radio) {
-        this.radio = radio;
+    public void setDescExam(String descExam) {
+        this.descExam = descExam;
     }
-
-    public boolean isUltra() {
-        return ultra;
-    }
-
-    public void setUltra(boolean ultra) {
-        this.ultra = ultra;
-    }
-
-    public boolean isElectro() {
-        return electro;
-    }
-
-    public void setElectro(boolean electro) {
-        this.electro = electro;
-    }
-
-    public boolean isOtros() {
-        return otros;
-    }
-
-    public void setOtros(boolean otros) {
-        this.otros = otros;
-    }
+    
+    
     
     
 }

@@ -102,7 +102,7 @@ public class EditMedicamentoController {
                         
                         medica.setCod_Med(rs.getString("cod_med"));
                         medica.setNom_Med(rs.getString("nom_med"));
-                        medica.setCant_Med(rs.getDouble("cant_med"));
+                        medica.setCant_Med(rs.getString("cant_med"));
                         medica.setDosis_Med(rs.getString("dosis_med"));
                     }
                     return medica;

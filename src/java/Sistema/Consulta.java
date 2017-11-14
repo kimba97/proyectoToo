@@ -17,23 +17,28 @@ public class Consulta {
     private String sintom;
     private String trat_Med;
     private Date fecha_Cons;
-    private Time hora_Cons;
-    private Doctor doctor_Cons;
-    private Paciente paciente_Cons;
+    private String hora_Cons;
+    private String doctor_Cons;
+    private String CodSign;
 
     public Consulta() {
     }
 
-    public Consulta(String cod_Cons, String sintom, String trat_Med, Date fecha_Cons, Time hora_Cons, Doctor doctor_Cons, Paciente paciente_Cons) {
+    public Consulta(String cod_Cons, String sintom, String trat_Med, Date fecha_Cons, String hora_Cons, String doctor_Cons, String CodSign) {
         this.cod_Cons = cod_Cons;
         this.sintom = sintom;
         this.trat_Med = trat_Med;
         this.fecha_Cons = fecha_Cons;
         this.hora_Cons = hora_Cons;
         this.doctor_Cons = doctor_Cons;
-        this.paciente_Cons = paciente_Cons;
+        this.CodSign = CodSign;
     }
 
+    
+
+    
+
+    
     public String getCod_Cons() {
         return cod_Cons;
     }
@@ -66,29 +71,32 @@ public class Consulta {
         this.fecha_Cons = fecha_Cons;
     }
 
-    public Time getHora_Cons() {
+    public String getHora_Cons() {
         return hora_Cons;
     }
 
-    public void setHora_Cons(Time hora_Cons) {
+    public void setHora_Cons(String hora_Cons) {
         this.hora_Cons = hora_Cons;
     }
 
-    public Doctor getDoctor_Cons() {
+    public String getDoctor_Cons() {
         return doctor_Cons;
     }
 
-    public void setDoctor_Cons(Doctor doctor_Cons) {
+    public void setDoctor_Cons(String doctor_Cons) {
         this.doctor_Cons = doctor_Cons;
     }
 
-    public Paciente getPaciente_Cons() {
-        return paciente_Cons;
+    public String getCodSign() {
+        return CodSign;
     }
 
-    public void setPaciente_Cons(Paciente paciente_Cons) {
-        this.paciente_Cons = paciente_Cons;
+    public void setCodSign(String CodSign) {
+        this.CodSign = CodSign;
     }
+
+    
+
     
     
 }
