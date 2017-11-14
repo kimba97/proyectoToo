@@ -7,6 +7,9 @@ package controladores;
 
 import Sistema.Conectar;
 import Sistema.Expediente;
+import Sistema.ExpedienteAddValidar;
+import Sistema.Paciente;
+import java.sql.ResultSet;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -24,8 +27,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("addExpediente.htm")
 public class addExpedienteController {
     private JdbcTemplate jdbcTemplate;
-    
+    ExpedienteAddValidar validar;
     public addExpedienteController() {
+        this.validar = new ExpedienteAddValidar();
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
@@ -48,7 +52,7 @@ public class addExpedienteController {
         )
     {
         
-        
+        validar.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
@@ -57,10 +61,10 @@ public class addExpedienteController {
             return mav;
         }else
         {
-            
+            String cod = obtenerPac().getCod_Pac();
             this.jdbcTemplate.update(
             "insert into expediente (cod_expe, cod_pac, profesi_pac, estad_civ, nom_papa, nom_mama, pareja) values (?, ?, ?, ?, ?, ?, ?)",
-           u.getCodExpe(), u.getPaci(), u.getProfesion(), u.getEstadoCivil(), u.getNomPadre(), u.getNomMadre(), u.getNomConyuge());
+           u.getCodExpe(), cod, u.getProfesion(), u.getEstadoCivil(), u.getNomPadre(), u.getNomMadre(), u.getNomConyuge());
             return new ModelAndView("redirect:/addExpediente.htm");
         
         }
@@ -68,5 +72,15 @@ public class addExpedienteController {
         
     
         
+    }
+        public Paciente obtenerPac(){
+        final Paciente m=new Paciente();
+        String sql = "SELECT * FROM paciente ORDER BY cod_pac DESC LIMIT 1";
+        return (Paciente) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
+            if(rs.next()){
+                m.setCod_Pac(rs.getString("cod_pac"));
+            }
+            return m;
+        }); 
     }
 }

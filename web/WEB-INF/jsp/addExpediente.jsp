@@ -25,11 +25,7 @@
                             <form:input path="codExpe" cssClass="form-control"/>
                         </p>
                         <p>
-                            <form:label path="paci">Codigo de Paciente</form:label>
-                            <form:input path="paci" cssClass="form-control"/>
-                        </p>
-                        <p>
-                            <form:label path="profesion">Profesion</form:label>
+                            <form:label path="profesion">Profesion u Oficio</form:label>
                             <form:input path="profesion" cssClass="form-control"/>
                         </p>
                         <p>

@@ -15,35 +15,39 @@ public class Empleado extends Persona{
     private String puest_Emp;
     private String cod_Emp;
     private double salario;
-    private Usuario user;
+    private String user;
 
     public Empleado() {
     }
-    
-    public Empleado(String cod_Emp, String puest_Emp, double salario, Usuario user) {
+
+    public Empleado(String puest_Emp, String cod_Emp, double salario, String user) {
         this.puest_Emp = puest_Emp;
         this.cod_Emp = cod_Emp;
         this.salario = salario;
         this.user = user;
     }
 
-    public Empleado(String puest_Emp, String cod_Emp, double salario, Usuario user, String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
+    public Empleado(String puest_Emp, String cod_Emp, double salario, String user, String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
         super(dui, clinica, nombre_P, apel_P, sexo_P, fecha_Nacim, Munic_P, Dep_P);
         this.puest_Emp = puest_Emp;
         this.cod_Emp = cod_Emp;
         this.salario = salario;
         this.user = user;
     }
+    
+   
 
     
 
     
 
-    public Usuario getUser() {
+    
+
+    public String getUser() {
         return user;
     }
 
-    public void setUser(Usuario user) {
+    public void setUser(String user) {
         this.user = user;
     }
     

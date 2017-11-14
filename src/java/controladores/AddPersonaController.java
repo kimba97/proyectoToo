@@ -8,7 +8,7 @@ package controladores;
 import Sistema.Clinica;
 import Sistema.Conectar;
 import Sistema.Persona;
-import Sistema.Usuario;
+import Sistema.PersonaAddValidar;
 import java.sql.Date;
 import java.sql.ResultSet;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,9 +27,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("addPersona.htm")
 public class AddPersonaController {
+    PersonaAddValidar validar;
     private JdbcTemplate jdbcTemplate;
 
     public AddPersonaController() {
+        this.validar = new PersonaAddValidar();
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
@@ -51,7 +53,7 @@ public class AddPersonaController {
             SessionStatus status
         )
     {
-        
+        validar.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();

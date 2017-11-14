@@ -24,12 +24,8 @@
                             <form:label path="cod_Pac">Codigo Paciente</form:label>
                             <form:input path="cod_Pac" cssClass="form-control"/>
                         </p>
-                        <p>
-                            <form:label path="dui">Confirme el dui:</form:label>
-                            <form:input path="dui" cssClass="form-control"/>
-                        </p>
                         <p>   
-                            <input type="submit" value="Guardar" class="btn btn-primary"/>
+                            <input type="submit" value="Agrega el Expediente" class="btn btn-primary"/>
                         </p> 
                     </form:form>
    

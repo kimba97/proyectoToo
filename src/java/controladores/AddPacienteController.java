@@ -2,8 +2,8 @@
 package controladores;
 
 import Sistema.Conectar;
-import Sistema.Expediente;
 import Sistema.Paciente;
+import Sistema.PacienteAddValidar;
 import Sistema.Persona;
 import java.sql.ResultSet;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,9 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("addPaciente.htm")
 public class AddPacienteController {
+    PacienteAddValidar validar;
     private JdbcTemplate jdbcTemplate;
     
     public AddPacienteController() {
+        this.validar = new PacienteAddValidar();
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
@@ -43,7 +45,7 @@ public class AddPacienteController {
         )
     {
         
-        
+        validar.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
@@ -52,11 +54,12 @@ public class AddPacienteController {
             return mav;
         }else
         {
-            
+           
+            String dui = obtenerDui().getDui();
             this.jdbcTemplate.update(
             "insert into paciente (cod_pac, dui) values (?, ?)",
-           u.getCod_Pac(), u.getDui());
-            return new ModelAndView("redirect:/addPaciente.htm");
+           u.getCod_Pac(), dui);
+            return new ModelAndView("redirect:/addExpediente.htm");
         
         }
         
@@ -65,4 +68,14 @@ public class AddPacienteController {
         
     }
         
+      public Persona obtenerDui(){
+        final Persona m=new Persona();
+        String sql = "SELECT * FROM persona ORDER BY dui DESC LIMIT 1";
+        return (Persona) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
+            if(rs.next()){
+                m.setDui(rs.getString("dui"));
+            }
+            return m;
+        }); 
+    } 
 }
