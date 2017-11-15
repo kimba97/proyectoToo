@@ -4,16 +4,19 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
+         <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, mainimum-scale=1">
         <title>Listado Usuarios</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <h1>Usuarios</h1>
+                <h2>Usuarios</h2>
                 <p>
-                    <a href="<c:out value="addUser.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="false"></span>Agregar</a>
+                    <a href="<c:out value="addUser.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus " aria-hidden="false"></span>Agregar</a>
+                    <a href="#ventanaBuscar" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-search " aria-hidden="false"></span>Buscar</a>
                 </p>
+                
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
@@ -38,5 +41,36 @@
                 </table>
             </div>
         </div>
+                
+        <div class="container">
+            <br>
+            
+            <div class="modal fade" id="ventanaBuscar">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" arial-hidden="true">&times;</button>
+		          <h4 class="modal-tittle">Buscar usuario</h4>
+		      </div>
+                        <div class="modal-body">
+		 				
+                            <form:form method="post" commandName="buscar">
+                                        <label path="username">Codigo Usuario: </label>
+                                        <input type="text" path="username" name="" />
+                                        <p>   
+                                            <input type="submit" value="Buscar" class="btn btn-primary"/>
+                                        </p> 
+                            </form:form>
+                                
+                        </div>
+                   </div>
+                    
+               </div>
+            </div>
+        </div>
+                
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>      
+                
     </body>
 </html>

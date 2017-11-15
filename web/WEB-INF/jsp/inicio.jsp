@@ -16,11 +16,12 @@
         <form:form name="submitForm" method="POST">
             
             <div align="center">
-                <div style="color: red">${error}</div>
+                <div style="color: blue"><strong>${msg}</strong></div>
+                <div style="color: red"><strong>${error}</strong></div>
                 <div>
                  <input type="text" placeholder="Usuario" name="usuario" />
                  <input type="password" placeholder="Password" name="psw" />
-                <input type="submit" value="login" />
+                <input type="submit" value="iniciar sesion" />
                </div> 
            
             </div>

@@ -28,8 +28,6 @@
                             <input type="submit" value="Agrega el Expediente" class="btn btn-primary"/>
                         </p> 
                     </form:form>
-   
-       
                 </div>
             </div>
                 
