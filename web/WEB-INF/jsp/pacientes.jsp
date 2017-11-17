@@ -46,8 +46,8 @@
                                 <td> <c:out value="${dato.dep_p}"/> </td>
                                 <td>
                                     <!--Modificar estos campos -->
-                                 <a href="<c:out value="editUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                  <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <!--ya esta--> <a href="<c:out value="editPacientes.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deletePaciente.htm?id=${dato.cod_pac}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                             
