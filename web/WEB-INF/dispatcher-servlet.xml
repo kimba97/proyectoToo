@@ -47,6 +47,7 @@
               <prop key="addDoctor.htm">addDoctorController</prop>
               <prop key="pacientes.htm">pacienteController</prop>
               <prop key="editPacientes.htm">editPacienteController</prop>
+              <prop key="editExpedientes.htm">editExpedienteController</prop>
               <prop key="expedientes.htm">expedienteController</prop>
             </props>
         </property>
@@ -90,6 +91,7 @@
     <bean name="editPacienteController" class="controladores.EditPacienteController"/>
     <bean name="deletePacienteController" class="controladores.DeletePacienteController"/>
     <bean name="expedienteController" class="controladores.ExpedienteController"/>
+    <bean name="editExpedienteController" class="controladores.EditExpedienteController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

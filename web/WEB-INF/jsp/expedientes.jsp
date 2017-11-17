@@ -47,8 +47,9 @@
                                 <td> <c:out value="${dato.nom_mama}"/> </td>
                                 <td> <c:out value="${dato.pareja}" /> </td>
                                 <td>
+                                  
+                                  <a href="<c:out value="editExpedientes.htm?id=${dato.cod_expe}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                   <!-- Falta cambiar esto-->
-                                  <a href="<c:out value="editUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                   <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
