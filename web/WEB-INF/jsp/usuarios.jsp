@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,12 +10,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
+        
         <div class="container">
             <div class="row">
                 <h2>Usuarios</h2>
                 <p>
                     <a href="<c:out value="addUser.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus " aria-hidden="false"></span>Agregar</a>
-                    <a href="#ventanaBuscar" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-search " aria-hidden="false"></span>Buscar</a>
+                    <!--<a href="#ventanaBuscar" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus " aria-hidden="false"></span>Agregar2</a>-->
+                    <a href="<c:out value="buscarUsuario.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="false"></span>Buscar</a>
                 </p>
                 
                 <table class="table table-bordered table-striped table-hover">
@@ -41,8 +44,9 @@
                 </table>
             </div>
         </div>
+        
                 
-        <div class="container">
+       <!-- <div class="container">
             <br>
             
             <div class="modal fade" id="ventanaBuscar">
@@ -53,24 +57,21 @@
 		          <h4 class="modal-tittle">Buscar usuario</h4>
 		      </div>
                         <div class="modal-body">
-		 				
-                            <form:form method="post" commandName="buscar">
-                                        <label path="username">Codigo Usuario: </label>
-                                        <input type="text" path="username" name="" />
-                                        <p>   
-                                            <input type="submit" value="Buscar" class="btn btn-primary"/>
-                                        </p> 
-                            </form:form>
-                                
+                           <p>
+                               <a href="<//c:out value="addPaciente.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="false"></span>Paciente</a>
+                               <a href="<//c:out value="#"/>" class="btn btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="false"></span>Empleado</a>
+                           </p>
                         </div>
                    </div>
                     
                </div>
             </div>
-        </div>
+    </div>
+ 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>--> 
                 
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>      
+         
                 
     </body>
 </html>

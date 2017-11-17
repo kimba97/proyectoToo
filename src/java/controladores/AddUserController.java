@@ -5,6 +5,7 @@ import Sistema.Encriptacion;
 import Sistema.Conectar;
 import Sistema.Usuario;
 import Sistema.UsuarioAddValidar;
+import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -56,10 +57,12 @@ public class AddUserController {
         }else
         {
               
-            this.jdbcTemplate.update(
-            "insert into usuario (username,contrasenia) values (?,?)",
-            u.getUsuario(), u.getPsw());
-            return new ModelAndView("redirect:/usuarios.htm");
+         ModelAndView mav = new ModelAndView();
+        String sql = "select * from usuario";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datos",datos);
+        mav.setViewName("usuarios");
+        return mav;
         
         }
         

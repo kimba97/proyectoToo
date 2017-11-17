@@ -25,7 +25,7 @@
                             <form:input path="cod_Pac" cssClass="form-control"/>
                         </p>
                         <p>   
-                            <input type="submit" value="Agrega el Expediente" class="btn btn-primary"/>
+                            <input type="submit" value="Buscar" class="btn btn-primary"/>
                         </p> 
                     </form:form>
                 </div>
