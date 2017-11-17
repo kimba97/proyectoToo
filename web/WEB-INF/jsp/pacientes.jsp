@@ -15,6 +15,7 @@
             <div class="row">
                 <h2>Pacientes</h2>
                 <p>
+                    <a href="<c:out value="addExpediente.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="false"></span>Aniadir Expediente</a>
                     <a href="<c:out value="addPersona.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus " aria-hidden="false"></span>Agregar</a>
                    <a href="<c:out value="#"/>" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="false"></span>Buscar</a>
                 </p>

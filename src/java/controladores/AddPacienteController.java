@@ -59,7 +59,7 @@ public class AddPacienteController {
             this.jdbcTemplate.update(
             "insert into paciente (cod_pac, dui) values (?, ?)",
            u.getCod_Pac(), dui);
-            return new ModelAndView("redirect:/addExpediente.htm");
+            return new ModelAndView("redirect:/pacientes.htm");
         
         }
         
