@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="<c:url value="usuarios.htm"/>">Usuarios<a/>
+                <li><a href="<c:url value="expedientes.htm"/>">Listado Expedientes<a/>
                 <li class="active">Agregar</li>
             </ol>
             <div class="panel panel-primary">
