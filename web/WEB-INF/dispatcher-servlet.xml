@@ -40,6 +40,10 @@
                <prop key="addPaciente.htm">addPacienteController</prop>
                <prop key="addExpediente.htm">addExpedienteController</prop> 
               <prop key="buscarUsuario.htm">buscarUsuarioController</prop>
+              <prop key="addPersona1.htm">addPersonaController1</prop>
+              <prop key="personas.htm">PersonaController</prop>
+              <prop key="doctores.htm">DoctorController</prop>
+              <prop key="addDoctor.htm">addDoctorController</prop>
             </props>
         </property>
     </bean>
@@ -74,6 +78,10 @@
     <bean name="addPacienteController" class="controladores.AddPacienteController"/> 
     <bean name="addExpedienteController" class="controladores.addExpedienteController"/> 
     <bean name="buscarUsuarioController" class="controladores.BuscarUsuarioController"/>
+    <bean name="addPersonaController1" class="controladores.AddPersonaController1"/>
+    <bean name="PersonaController" class="controladores.PersonaController"/>
+    <bean name="DoctorController" class="controladores.DoctorController"/>
+    <bean name="addDoctorController" class="controladores.AddDoctorController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

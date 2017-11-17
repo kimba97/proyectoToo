@@ -32,8 +32,8 @@
                             <form:input type="text" path="cod_Emp" cssClass="form-control" readonly="true"/>
                         </p>
                         <p>
-                            <form:label path="user">username:</form:label>
-                            <form:input type="text" path="user" cssClass="form-control"/>
+                            <form:label path="username">username:</form:label>
+                            <form:input type="text" path="username" cssClass="form-control"/>
                         </p>
                         <p>
                             <form:label path="salario">Salario:</form:label>

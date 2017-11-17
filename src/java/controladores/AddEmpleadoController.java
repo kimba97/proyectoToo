@@ -5,9 +5,12 @@
  */
 package controladores;
 
+
 import Sistema.Conectar;
 import Sistema.Encriptacion;
 import Sistema.Empleado;
+import Sistema.Persona;
+import java.sql.ResultSet;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -22,7 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author josej
  */
 @Controller
-@RequestMapping("addUser.html")
+@RequestMapping("addEmpleado.htm")
 public class AddEmpleadoController {
     //EmpleadoAddValidar empleadoValidar;
     private JdbcTemplate jdbcTemplate;
@@ -45,7 +48,7 @@ public class AddEmpleadoController {
     @RequestMapping(method=RequestMethod.POST)
     public ModelAndView form
         (
-            @ModelAttribute("empleados") Empleado e,
+            @ModelAttribute("empleados") Empleado e, 
             BindingResult result,
             SessionStatus status
         )
@@ -61,12 +64,25 @@ public class AddEmpleadoController {
             return mav;
         }else
         {
-              
+            
+            String dui = obtenerDui().getDui();
             this.jdbcTemplate.update(
-            "insert into empleado (cod_emp,dui,username,puest_emp,salario) values (?,?,?,?,?)",
-            e.getCod_Emp(),e.getDui(),e.getUser(),e.getPuest_Emp(),e.getSalario());
+            "insert into empleado (cod_emp,dui,username,salario, puest_emp) values (?,?,?,?,?)",
+            e.getCod_Emp(),dui, e.getUsername(),e.getSalario(),e.getPuest_Emp());
             return new ModelAndView("redirect:/empleados.htm");
         
+            }
+        }
+        
+       public Persona obtenerDui(){
+        final Persona m=new Persona();
+        String sql = "SELECT * FROM persona ORDER BY dui DESC LIMIT 1";
+        return (Persona) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
+            if(rs.next()){
+                m.setDui(rs.getString("dui"));
+            }
+            return m;
+        }); 
         }
         
     }
@@ -75,4 +91,4 @@ public class AddEmpleadoController {
     
     
     
-}
+

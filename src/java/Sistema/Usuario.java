@@ -30,6 +30,10 @@ public class Usuario {
     public void setPsw(String psw) {
         this.psw = psw;
     }
+
+    public void getUsuario(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

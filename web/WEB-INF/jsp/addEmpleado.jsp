@@ -30,13 +30,10 @@
                             <form:label path="cod_Emp">Codigo:</form:label>
                             <form:input type="text" path="cod_Emp" cssClass="form-control"/>
                         </p>
+                        
                         <p>
-                            <form:label path="dui">DUI:</form:label>
-                            <form:input type="text" path="dui" cssClass="form-control"/>
-                        </p>
-                        <p>
-                            <form:label path="user">Username:</form:label>
-                            <form:input type="text" path="user" cssClass="form-control"/>
+                            <form:label path="username">Username:</form:label>
+                            <form:input type="text" path="username" cssClass="form-control"/>
                         </p>
                         <p>
                             <form:label path="salario">Salario:</form:label>
@@ -47,6 +44,7 @@
                             <form:label path="puest_Emp">Puesto:</form:label>
                             <form:input type="text" path="puest_Emp" cssClass="form-control"/>
                         </p>   
+                        
                         <p>   
                             <input type="submit" value="Enviar" class="btn btn-primary"/>
                         </p>

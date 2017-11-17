@@ -16,14 +16,14 @@ public class Doctor extends Empleado{
         this.nom_Esp = nom_Esp;
     }
 
-    public Doctor(String cod_Esp, String nom_Esp, String puest_Emp, String cod_Emp, double salario, String user) {
-        super(puest_Emp, cod_Emp, salario, user);
+    public Doctor(String cod_Esp, String username, String nom_Esp, String puest_Emp, String cod_Emp, double salario) {
+        super(puest_Emp, username , cod_Emp, salario);
         this.cod_Esp = cod_Esp;
         this.nom_Esp = nom_Esp;
     }
 
-    public Doctor(String cod_Esp, String nom_Esp, String puest_Emp, String cod_Emp, double salario, String user, String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
-        super(puest_Emp, cod_Emp, salario, user, dui, clinica, nombre_P, apel_P, sexo_P, fecha_Nacim, Munic_P, Dep_P);
+    public Doctor(String cod_Esp, String username, String nom_Esp, String puest_Emp, String cod_Emp, double salario, String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
+        super(puest_Emp, username, cod_Emp, salario, dui, clinica, nombre_P, apel_P, sexo_P, fecha_Nacim, Munic_P, Dep_P);
         this.cod_Esp = cod_Esp;
         this.nom_Esp = nom_Esp;
     }

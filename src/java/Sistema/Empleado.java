@@ -12,29 +12,33 @@ import java.util.Date;
  * @author kimba
  */
 public class Empleado extends Persona{
-    private String puest_Emp;
+    
     private String cod_Emp;
+    private String username;
     private double salario;
-    private String user;
+    private String puest_Emp;
+    
+    
 
     public Empleado() {
     }
 
-    public Empleado(String puest_Emp, String cod_Emp, double salario, String user) {
+    public Empleado( String cod_Emp, String username, String puest_Emp, double salario ) {
         this.puest_Emp = puest_Emp;
+        this.username = username;
         this.cod_Emp = cod_Emp;
         this.salario = salario;
-        this.user = user;
+        
     }
 
-    public Empleado(String puest_Emp, String cod_Emp, double salario, String user, String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
+    public Empleado( String cod_Emp, String username, String puest_Emp,double salario,  String dui, String clinica, String nombre_P, String apel_P, String sexo_P, String fecha_Nacim, String Munic_P, String Dep_P) {
         super(dui, clinica, nombre_P, apel_P, sexo_P, fecha_Nacim, Munic_P, Dep_P);
         this.puest_Emp = puest_Emp;
         this.cod_Emp = cod_Emp;
         this.salario = salario;
-        this.user = user;
+        this.username = username;
     }
-    
+        
    
 
     
@@ -43,14 +47,14 @@ public class Empleado extends Persona{
 
     
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
-
-    public void setUser(String user) {
-        this.user = user;
+  
+    public void setUsername(String username) {
+        this.username = username;
     }
-    
+   
 
     public String getPuest_Emp() {
         return puest_Emp;

@@ -27,7 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author josej
  */
 @Controller
-@RequestMapping("editUser.htm")
+@RequestMapping("editClinica.htm")
 public class EditClinicaController {
     private JdbcTemplate jdbcTemplate;
 
