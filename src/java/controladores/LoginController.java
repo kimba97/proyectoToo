@@ -3,9 +3,12 @@ package controladores;
 
 import Sistema.Conectar;
 import Sistema.Empleado;
+import Sistema.Encriptacion;
 import Sistema.Usuario;
 import java.sql.ResultSet;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +33,8 @@ public class LoginController {
     }
     
      @RequestMapping(method = RequestMethod.POST)
-     public String submit(Model model, @ModelAttribute("Usuario") Usuario loginBean) {
+    public String submit(Model model, @ModelAttribute("Usuario") Usuario loginBean) {
+        
         if ( loginBean.getUsuario().length()!= 0 && loginBean.getPsw().length()!= 0) {
             
             Usuario u = obtenerUsuario(loginBean.getUsuario());
@@ -63,7 +67,11 @@ public class LoginController {
         return (Usuario) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
             if(rs.next()){
                 m.setUsuario(rs.getString("username"));
-                m.setPsw(rs.getString("contrasenia"));
+                try {
+                    m.setPsw(Encriptacion.Desencriptar(rs.getString("contrasenia")));
+                } catch (Exception ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             return m;
         }); 
