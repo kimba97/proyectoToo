@@ -51,6 +51,8 @@
               <prop key="expedientes.htm">expedienteController</prop>
               <prop key="vistaFisioterapista.htm">vistaFisioterapistaController</prop>
               <prop key="vistaMedico.htm">vistaMedicoController</prop>
+              <prop key="buscarExpediente.htm">buscarExpedienteController</prop>
+              <prop key="buscarPaciente.htm">buscarPacienteController</prop>
             </props>
         </property>
     </bean>
@@ -96,6 +98,8 @@
     <bean name="editExpedienteController" class="controladores.EditExpedienteController"/>
     <bean name="vistaFisioterapistaController" class="controladores.VistaFisioterapistaController"/>
     <bean name="vistaMedicoController" class="controladores.VistaMedicoController"/>
+    <bean name="buscarExpedienteController" class="controladores.BuscarExpedienteController"/>
+    <bean name="buscarPacienteController" class="controladores.BuscarPacienteController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

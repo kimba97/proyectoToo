@@ -46,7 +46,7 @@
                             <th>Fecha de nacimiento</th>
                             <th>Municipio</th>
                             <th>Departamento</th>
-                         
+                            <th>Acciones</th>
                         </tr>   
                     </thead>
                     <tbody>
@@ -60,6 +60,11 @@
                                 <td> <c:out value="${dato.fech_nac}"/> </td>
                                 <td> <c:out value="${dato.munic_p}" /> </td>
                                 <td> <c:out value="${dato.dep_p}"/> </td>
+                                <td>
+                                    <!--Modificar estos campos -->
+                                <!--ya esta--> <a href="<c:out value="editPacientes.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deletePaciente.htm?id=${dato.cod_pac}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                </td>
                             </tr>
                             
                         </c:forEach>

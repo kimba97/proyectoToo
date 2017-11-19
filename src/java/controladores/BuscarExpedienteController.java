@@ -16,7 +16,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("buscarExpediente.html")
+@RequestMapping("buscarExpediente.htm")
 public class BuscarExpedienteController {
 
     private JdbcTemplate jdbcTemplate;

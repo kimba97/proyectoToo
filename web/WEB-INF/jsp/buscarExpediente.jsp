@@ -14,7 +14,7 @@
                 <li><a href="<c:url value="expedientes.htm"/>"><strong>Listado Expedientes /</strong><a/>
            </ol>
             <div class="panel panel-primary">
-                <div class="panel-heading">Formulario para buscar paciente</div>
+                <div class="panel-heading">Formulario para buscar expediente</div>
                 <div class="panel-body">
                     <form:form method="post" commandName="expedientes">
                         <form:errors path="*" element="div" cssClass="alert alert-danger"/>
@@ -46,7 +46,8 @@
                             <th>Estado Civil</th>
                             <th>Nombre de Padre</th>
                             <th>Nombre de la madre</th>
-                            <th>Conjuye</th>                         
+                            <th>Conjuye</th>  
+                            <th>Acciones</th>
                         </tr>   
                     </thead>
                     <tbody>
@@ -61,6 +62,12 @@
                                 <td> <c:out value="${dato.nom_papa}" /> </td>
                                 <td> <c:out value="${dato.nom_mama}"/> </td>
                                 <td> <c:out value="${dato.pareja}" /> </td>
+                                <td>
+                                  
+                                  <a href="<c:out value="editExpedientes.htm?id=${dato.cod_expe}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <!-- Falta cambiar esto-->
+                                  <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                </td>
                             </tr>
                             
                         </c:forEach>

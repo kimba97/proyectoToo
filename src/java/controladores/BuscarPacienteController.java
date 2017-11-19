@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("buscarPaciente.html")
+@RequestMapping("buscarPaciente.htm")
 public class BuscarPacienteController {
 
     private JdbcTemplate jdbcTemplate;
