@@ -40,7 +40,7 @@
                         <tr>
                             <th>usuario</th>
                             <th>password</th>
-                            
+                            <th>Acciones</th>
                         </tr>   
                     </thead>
                     <tbody>
@@ -48,6 +48,10 @@
                             <tr>
                                 <td> <c:out value="${dato.username}" /> </td>
                                 <td> <c:out value="${dato.contrasenia}"/> </td>
+                                <td>
+                                  <a href="<c:out value="editUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                </td>
                             </tr>
                             
                         </c:forEach>

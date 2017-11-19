@@ -17,7 +17,7 @@ public class ExpedienteController {
     
     @RequestMapping("expedientes.htm")
     public ModelAndView usuarios()
-    {
+    {               
         ModelAndView mav = new ModelAndView();
         String sql = "SELECT ex.cod_expe, ex.cod_pac, per.nombre_p, per.apel_p,  ex.profesi_pac, ex.estad_civ, ex.nom_papa, ex.nom_mama, ex.pareja " +
                         "FROM expediente ex " +

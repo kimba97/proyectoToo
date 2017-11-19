@@ -57,13 +57,10 @@ public class AddUserController {
         }else
         {
               
-         ModelAndView mav = new ModelAndView();
-        String sql = "select * from usuario";
-        List datos = this.jdbcTemplate.queryForList(sql);
-        mav.addObject("datos",datos);
-        mav.setViewName("usuarios");
-        return mav;
-        
+            this.jdbcTemplate.update(
+            "insert into usuario(username, contrasenia) values (?,?)",
+            u.getUsuario(), u.getPsw());
+            return new ModelAndView("redirect:/usuarios.htm");
         }
         
     }

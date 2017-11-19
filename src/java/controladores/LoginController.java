@@ -2,6 +2,7 @@
 package controladores;
 
 import Sistema.Conectar;
+import Sistema.Empleado;
 import Sistema.Usuario;
 import java.sql.ResultSet;
 import java.util.List;
@@ -33,10 +34,18 @@ public class LoginController {
         if ( loginBean.getUsuario().length()!= 0 && loginBean.getPsw().length()!= 0) {
             
             Usuario u = obtenerUsuario(loginBean.getUsuario());
+            Empleado e = obtenerPuesto(loginBean.getUsuario());
+            
             if (loginBean.getUsuario().equals(u.getUsuario()) && loginBean.getPsw().equals(u.getPsw())) {
-                model.addAttribute("msg", "welcome" + loginBean.getUsuario());
-                return "index";
-            } else {
+                if (e.getPuest_Emp().equalsIgnoreCase("Doctor")) {
+                    return "vistaMedico";
+                 } else if (e.getPuest_Emp().equalsIgnoreCase("Fisioterapista")){
+                 return "vistaFisioterapista";
+               }
+                
+            } 
+            
+            else {
                 model.addAttribute("error", "Datos invalidos, intente nuevamente");
                 return "inicio";
             }
@@ -45,7 +54,7 @@ public class LoginController {
             model.addAttribute("error", "Por favor complete los campos");
             return "inicio";
         }
-        
+        return null;
     }
     
     public Usuario obtenerUsuario(String username){
@@ -60,7 +69,17 @@ public class LoginController {
         }); 
     }
     
-   
-   
+    //Metodo para obtener el puesto  del empleado
+    public Empleado obtenerPuesto(String username){
+        final Empleado e=new Empleado();
+        String sql = "SELECT * FROM empleado WHERE username='" +username+"'";
+        return (Empleado) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
+            if(rs.next()){
+               e.setCod_Emp(rs.getString("cod_emp"));
+               e.setPuest_Emp(rs.getString("puest_emp"));
+            }
+            return e;
+        }); 
+    }
     
 }
