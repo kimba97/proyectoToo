@@ -16,7 +16,7 @@
                 <h2>Expedientes</h2>
                 <p>
                     <a href="<c:out value="addExpediente.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus " aria-hidden="false"></span>Agregar</a>
-                   <a href="<c:out value=""/>" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="false"></span>Buscar</a>
+                   <a href="<c:out value="buscarExpediente.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="false"></span>Buscar</a>
                 </p>
                 
                 <table class="table table-bordered table-striped table-hover">
@@ -50,7 +50,7 @@
                                   
                                   <a href="<c:out value="editExpedientes.htm?id=${dato.cod_expe}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                   <!-- Falta cambiar esto-->
-                                  <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deleteExpediente.htm?id=${dato.cod_expe}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                             

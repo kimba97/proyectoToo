@@ -65,7 +65,7 @@ public class addExpedienteController {
             this.jdbcTemplate.update(
             "insert into expediente (cod_expe, cod_pac, profesi_pac, estad_civ, nom_papa, nom_mama, pareja) values (?, ?, ?, ?, ?, ?, ?)",
            u.getCodExpe(), u.getPaci(), u.getProfesion(), u.getEstadoCivil(), u.getNomPadre(), u.getNomMadre(), u.getNomConyuge());
-            return new ModelAndView("redirect:/addExpediente.htm");
+            return new ModelAndView("redirect:/Expedientes.htm");
         
         }
         
