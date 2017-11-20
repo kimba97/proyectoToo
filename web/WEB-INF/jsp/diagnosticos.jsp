@@ -42,11 +42,11 @@
                                 
                                 <td>
                                     
-                                  <a href="<c:out value="editConsultas.htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                  <a href="<c:out value="deleteConsulta.htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="editarDiagnostico.htm?id=${dato.cod_diag}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deleteDiag.htm?id=${dato.cod_diag}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                                 <td>
-                                    <a href="<c:out value="deleteConsulta.htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Crear</a>
+                                    <a href="<c:out value=".htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Crear</a>
                                 </td>
                             </tr>
                             

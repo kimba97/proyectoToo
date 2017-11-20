@@ -36,7 +36,7 @@ public class AddDiagnosticoController {
      @RequestMapping(method=RequestMethod.POST)
     public ModelAndView form
         (
-            @ModelAttribute("consultas") Diagnostico u,
+            @ModelAttribute("diagnosticos") Diagnostico u,
             BindingResult result,
             SessionStatus status,
             HttpServletRequest request
@@ -46,8 +46,8 @@ public class AddDiagnosticoController {
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addConsulta");
-            mav.addObject("consultas",new Diagnostico());
+            mav.setViewName("addDiagnostico");
+            mav.addObject("diagnosticos",new Diagnostico());
             return mav;
         }else
         {
