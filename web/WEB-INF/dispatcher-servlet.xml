@@ -25,6 +25,7 @@
                <prop key="deleteUser.htm">deleteUserController</prop>
                <prop key="deletePaciente.htm">deletePacienteController</prop>
                <prop key="deleteSignos.htm">deleteSignosController</prop>
+               <prop key="deleteConsulta.htm">deleteConsultasController</prop>
                <prop key="editUser.htm">editUserController</prop>  
                <prop key="medicamentos.htm">medicamentoController</prop>
                <prop key="addMedicamento.htm">addMedicamentoController</prop> 
@@ -65,6 +66,7 @@
                <prop key="deleteDoctor.htm">DeleteDoctorController</prop>
                <prop key="consultas.htm">consultaController</prop>
                <prop key="buscarConsulta.htm">buscarConsultaController</prop>
+               <prop key="editConsultas.htm">editConsultasController</prop>
             </props>
         </property>
     </bean>
@@ -124,6 +126,8 @@
     <bean name="addConsultaController" class="controladores.AddConsultaController"/>
     <bean name="consultaController" class="controladores.ConsultasController"/>
     <bean name="buscarConsultaController" class="controladores.BuscarConsultasController"/>
+    <bean name="editConsultasController" class="controladores.EditConsultasController"/>
+    <bean name="deleteConsultasController" class="controladores.DeleteConsultaController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

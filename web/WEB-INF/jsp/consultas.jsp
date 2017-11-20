@@ -49,9 +49,9 @@
                                 <td> <c:out value="${dato.fecha_cons}" /> </td>
                                 <td> <c:out value="${dato.hora_cons}"/> </td>
                                 <td>
-                                    <!--Modificar estos campos -->
-                                 <a href="<c:out value="editPacientes.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                  <a href="<c:out value="deletePaciente.htm?id=${dato.cod_pac}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                    
+                                  <a href="<c:out value="editConsultas.htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="deleteConsulta.htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>
                             

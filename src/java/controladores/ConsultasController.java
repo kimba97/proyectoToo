@@ -19,7 +19,7 @@ public class ConsultasController {
     }
     
     @RequestMapping("consultas.htm")
-    public ModelAndView usuarios()
+    public ModelAndView consultas()
     {
         ModelAndView mav = new ModelAndView();
         String sql = "select co.cod_cons,ex.cod_expe,sig.cod_sin,pa.cod_pac,per.nombre_p,per.apel_p,pir.nombre_p,pir.apel_p,co.fecha_cons, co.hora_cons "

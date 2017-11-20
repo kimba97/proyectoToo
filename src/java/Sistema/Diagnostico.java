@@ -5,23 +5,39 @@ package Sistema;
 public class Diagnostico {
     private String cod_Diag;
     private String descrip;
-    private Expediente ex;
-    private Consulta cons;
+    private String ex;
+    private String cons;
 
     public Diagnostico() {
     }
 
-    public Diagnostico(String cod_Diag, String descrip, Expediente ex, Consulta cons) {
+    public Diagnostico(String cod_Diag, String descrip, String ex, String cons) {
         this.cod_Diag = cod_Diag;
         this.descrip = descrip;
         this.ex = ex;
         this.cons = cons;
     }
 
-    
+    public String getEx() {
+        return ex;
+    }
+
+    public void setEx(String ex) {
+        this.ex = ex;
+    }
+
+    public String getCons() {
+        return cons;
+    }
+
+    public void setCons(String cons) {
+        this.cons = cons;
+    }
 
     
 
+    
+    
     public String getCod_Diag() {
         return cod_Diag;
     }
