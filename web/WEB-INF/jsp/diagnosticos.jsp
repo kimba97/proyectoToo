@@ -46,7 +46,7 @@
                                   <a href="<c:out value="deleteDiag.htm?id=${dato.cod_diag}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                                 <td>
-                                    <a href="<c:out value=".htm?id=${dato.cod_cons}"/>"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Crear</a>
+                                    <a href="<c:out value="addMedicamento.htm?id=${dato.cod_diag}"/>"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Medicamentos</a>
                                 </td>
                             </tr>
                             

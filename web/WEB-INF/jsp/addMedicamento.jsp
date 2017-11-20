@@ -30,12 +30,7 @@
                             <form:label path="cod_Med">codigo:</form:label>
                             <form:input path="cod_Med" cssClass="form-control"/>
                             
-                        </p>
-                        <p>
-                            <form:label path="cod_Diag">codigo diagnostico:</form:label>
-                            <form:input path="cod_Diag" cssClass="form-control"/>
-                            
-                        </p>                        
+                        </p>                       
                         <p>
                             <form:label path="Nom_Med">nombre:</form:label>
                             <form:input type="text" path="Nom_Med" cssClass="form-control"/>

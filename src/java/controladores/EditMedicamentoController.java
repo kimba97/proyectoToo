@@ -78,12 +78,13 @@ public class EditMedicamentoController {
         this.jdbcTemplate.update(
                     "update medicamentos "
                 + "set nom_med=?,"
+                + "set cod_diag=?,"
                 + "cant_med=?,"
                 + "dosis_med=?"
                 + "where "
                 + "cod_med=? ",
                 
-         m.getNom_Med(),m.getCant_Med(),m.getDosis_Med(),cod_med);
+         m.getNom_Med(),m.getCod_Diag(),m.getCant_Med(),m.getDosis_Med(),cod_med);
          return new ModelAndView("redirect:/medicamentos.htm");
         }
        
@@ -104,6 +105,7 @@ public class EditMedicamentoController {
                         medica.setNom_Med(rs.getString("nom_med"));
                         medica.setCant_Med(rs.getString("cant_med"));
                         medica.setDosis_Med(rs.getString("dosis_med"));
+                        medica.setCod_Diag(rs.getString("cod_diag"));
                     }
                     return medica;
                 }

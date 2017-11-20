@@ -10,6 +10,7 @@ import Sistema.Conectar;
 import Sistema.Medicamentos;
 import Sistema.Usuario;
 import Sistema.UsuarioAddValidar;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -50,7 +51,8 @@ public class AddMedicamentoController {
         (
             @ModelAttribute("medicamentos") Medicamentos m,
             BindingResult result,
-            SessionStatus status
+            SessionStatus status,
+            HttpServletRequest request
         )
     {
         
@@ -64,10 +66,10 @@ public class AddMedicamentoController {
             return mav;
         }else
         {
-              
+            String cod_diag=request.getParameter("id");
             this.jdbcTemplate.update(
             "insert into medicamentos (cod_med, cod_diag, nom_med, cant_med, dosis_med) values (?,?,?,?,?)",
-            m.getCod_Med(), m.getCod_Diag(), m.getNom_Med(), m.getCant_Med(),m.getDosis_Med());
+            m.getCod_Med(), cod_diag , m.getNom_Med(), m.getCant_Med(),m.getDosis_Med());
             return new ModelAndView("redirect:/medicamentos.htm");
         
         }
