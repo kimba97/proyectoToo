@@ -19,7 +19,7 @@
                 <h1>Doctores</h1>
                 <p>
                     <a href="<c:out value="addDoctor.htm"/>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="false"></span>Agregar </a>
-                    <a href="#ventanaBuscar" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-search " aria-hidden="false"></span>Buscar</a>
+                    <a href="buscarDoctor.htm" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-search " aria-hidden="false"></span>Buscar</a>
                 </p>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
@@ -29,7 +29,7 @@
                             <th>Empleado</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
-                            
+                            <th>Acciones</th>
                         </tr>   
                     </thead>
                     <tbody>

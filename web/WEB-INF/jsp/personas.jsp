@@ -42,9 +42,9 @@
                                 <td> <c:out value="${dato.munic_p}"/> </td>
                                 <td> <c:out value="${dato.dep_p}"/> </td>
                                 <td>
-                                  <%-- <a href="<c:out value="editPersona.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="editPersona.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                   <a href="<c:out value="deletePersona.htm?id=${dato.dui}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-                                  --%> 
+                                   
                                 </td>
                             </tr>
                             

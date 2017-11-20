@@ -28,11 +28,15 @@
                         <h1>Complete los siguientes campos</h1>
                         <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                         <p>
-                            <form:label path="cod_Med">codigo:</form:label>
+                            <form:label path="cod_Med">codigo del medicamento:</form:label>
                             <form:input path="cod_Med" cssClass="form-control" readonly="true"/>
                             
                         </p>
-                        
+                        <p>
+                            <form:label path="cod_Diag">Diagnostico:</form:label>
+                            <form:input path="cod_Diag" cssClass="form-control" readonly="true"/>
+                            
+                        </p>
                         <p>
                             <form:label path="Nom_Med">nombre:</form:label>
                             <form:input type="text" path="Nom_Med" cssClass="form-control"/>

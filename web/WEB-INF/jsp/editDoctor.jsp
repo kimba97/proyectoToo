@@ -1,8 +1,4 @@
-<%-- 
-    Document   : editClinica
-    Created on : Oct 30, 2017, 12:11:32 AM
-    Author     : josej
---%>
+
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -17,35 +13,26 @@
     <body>
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="<c:url value="clinicas.htm"/>">Clinicas<a/>
+                <li><a href="<c:url value="doctores.htm"/>">Doctores<a/>
                 <li class="active">Editar</li>
             </ol>
             <div class="panel panel-primary">
-                <div class="panel-heading">Editar clinicas</div>
+                <div class="panel-heading">Editar Doctores</div>
                 <div class="panel-body">
                     
-                    <form:form method="post" commandName="clinicas">
+                    <form:form method="post" commandName="doctores">
                         <h1>Complete los siguientes campos</h1>
                         <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                         <p>
-                            <form:label path="cod_Clin">codigo Clinica:</form:label>
-                            <form:input path="cod_Clin" cssClass="form-control" readonly="true"/>
+                            <form:label path="cod_Esp">codigo Especialidad:</form:label>
+                            <form:input path="cod_Esp" cssClass="form-control" readonly="true"/>
                         </p>
                         <p>
-                            <form:label path="nom_Clin">nombre:</form:label>
-                            <form:input path="nom_Clin" cssClass="form-control"/>
+                            <form:label path="nom_Esp">nombre de Especialidad:</form:label>
+                            <form:input path="nom_Esp" cssClass="form-control"/>
                         </p>
                         
-                        <p>
-                            <form:label path="Dep_Clin">departamento:</form:label>
-                            <form:input type="text" path="Dep_Clin" cssClass="form-control"/>
-                        </p>   
-                        
-                        <p>
-                            <form:label path="Muni_Clin">municipio:</form:label>
-                            <form:input type="text" path="Muni_Clin" cssClass="form-control"/>
-                        </p> 
-                        <p>   
+                         
                             <input type="submit" value="Enviar" class="btn btn-primary"/>
                         </p>
                         

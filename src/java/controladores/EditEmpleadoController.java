@@ -75,12 +75,7 @@ public class EditEmpleadoController {
         {
             String cod_empleado=(request.getParameter("id"));
         this.jdbcTemplate.update(
-                    "update empleado "
-                + "set salario=?,"
-                + "username=?,"
-                + "puest_emp=? "
-                + "where "
-                + "cod_emp=? ",
+                    "update empleado set cod_emp=?, salario=?, username=?,puest_emp=? where cod_emp=? ",
                 
          e.getSalario(),e.getUsername(),e.getPuest_Emp(),cod_empleado);
          return new ModelAndView("redirect:/empleados.htm");

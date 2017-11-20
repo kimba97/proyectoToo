@@ -33,7 +33,7 @@
                         </p>
                         <p>
                             <form:label path="username">username:</form:label>
-                            <form:input type="text" path="username" cssClass="form-control"/>
+                            <form:input type="text" path="username" cssClass="form-control" readonly="true"/>
                         </p>
                         <p>
                             <form:label path="salario">Salario:</form:label>

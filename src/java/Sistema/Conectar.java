@@ -9,7 +9,7 @@ public class Conectar {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost/too115");
-        dataSource.setUsername("too115");
+        dataSource.setUsername("postgres");
         dataSource.setPassword("too1152017");
         return dataSource;
         

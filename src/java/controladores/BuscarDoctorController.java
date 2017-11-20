@@ -1,14 +1,13 @@
 package controladores;
 
-
 import Sistema.Conectar;
 import Sistema.Doctor;
-import Sistema.DoctorAddValidar;
-import Sistema.Empleado;
 import Sistema.Encriptacion;
-import java.sql.ResultSet;
+import Sistema.Expediente;
+import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,67 +15,54 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
-@RequestMapping("addDoctor.htm")
-public class AddDoctorController {
-    
+@RequestMapping("buscarDoctor.htm")
+public class BuscarDoctorController {
+
     private JdbcTemplate jdbcTemplate;
-    DoctorAddValidar validar;
-    public AddDoctorController() {
-        this.validar = new DoctorAddValidar();
+    
+    public BuscarDoctorController() 
+    {
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
-    
+ 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView form()
     {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("addDoctor");
+        mav.setViewName("buscarDoctor");
         mav.addObject("doctores",new Doctor());
         return mav;
     }
-     
+    
     @RequestMapping(method=RequestMethod.POST)
     public ModelAndView form
         (
-            @ModelAttribute("doctores") Doctor d, 
+            @ModelAttribute("doctores") Doctor doc,
             BindingResult result,
             SessionStatus status
         )
     {
-        validar.validate(d, result);
-        //this.empleadoValidar.validate(u, result);
-        //e.setPsw(Encriptacion.Encriptar(u.getPsw()));
+        
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
-            mav.setViewName("addDoctor");
+            mav.setViewName("buscarDoctor");
             mav.addObject("doctores",new Doctor());
             return mav;
         }else
         {
-            
-            String empleado = obtenerEmpleado().getCod_Emp();
-            this.jdbcTemplate.update(
-            "insert into doctor (cod_esp, cod_emp, nom_esp) values (?,?,?)",
-            d.getCod_Esp(), empleado, d.getNom_Esp());
-            return new ModelAndView("redirect:/doctores.htm");
+         
+            ModelAndView mav = new ModelAndView();
+            String sql = "select  d.cod_esp, d.nom_esp, e.cod_emp, p.nombre_p, p.apel_p from doctor d inner join empleado e on d.cod_emp= e.cod_emp inner join persona p on e.dui=p.dui where d.cod_esp='" + doc.getCod_Esp()+"'" ;
+            List datos = this.jdbcTemplate.queryForList(sql);
+            mav.addObject("datos",datos);
+            mav.setViewName("buscarDoctor");
+            return mav;
         
-            }
-        }
-       
-       public Empleado obtenerEmpleado(){
-        final Empleado m=new Empleado();
-        String sql = "SELECT * FROM empleado ORDER BY cod_emp DESC LIMIT 1";
-        return (Empleado) this.jdbcTemplate.query(sql, (ResultSet rs) -> {
-            if(rs.next()){
-                m.setCod_Emp(rs.getString("cod_emp"));
-            }
-            return m;
-        }); 
+        
         }
         
     }
-    
+}
