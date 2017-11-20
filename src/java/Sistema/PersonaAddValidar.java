@@ -4,9 +4,11 @@ package Sistema;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
 public class PersonaAddValidar implements Validator{
      @Override
-    public boolean supports(Class<?> type) 
+   
+     public boolean supports(Class<?> type) 
     {
        return Persona.class.isAssignableFrom(type);
     }

@@ -19,15 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- *
- * @author kimba
- */
+
 @Controller
 @RequestMapping("addExpediente.htm")
 public class addExpedienteController {
     private JdbcTemplate jdbcTemplate;
     ExpedienteAddValidar validar;
+    
     public addExpedienteController() {
         this.validar = new ExpedienteAddValidar();
         Conectar con = new Conectar();
@@ -65,7 +63,7 @@ public class addExpedienteController {
             this.jdbcTemplate.update(
             "insert into expediente (cod_expe, cod_pac, profesi_pac, estad_civ, nom_papa, nom_mama, pareja) values (?, ?, ?, ?, ?, ?, ?)",
            u.getCodExpe(), u.getPaci(), u.getProfesion(), u.getEstadoCivil(), u.getNomPadre(), u.getNomMadre(), u.getNomConyuge());
-            return new ModelAndView("redirect:/Expedientes.htm");
+            return new ModelAndView("redirect:/expedientes.htm");
         
         }
         

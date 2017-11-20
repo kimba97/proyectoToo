@@ -54,6 +54,9 @@
               <prop key="buscarExpediente.htm">buscarExpedienteController</prop>
               <prop key="buscarPaciente.htm">buscarPacienteController</prop>
               <prop key="deleteExpediente.htm">deleteExpedienteController</prop>
+              <prop key="signosVitales.htm">signosVitalesController</prop>
+              <prop key="addSignosVitales.htm">addSignosVitalesController</prop>
+              <prop key="buscarSignosVitales.htm">buscarSignosVitalesController</prop>
             </props>
         </property>
     </bean>
@@ -102,6 +105,9 @@
     <bean name="buscarExpedienteController" class="controladores.BuscarExpedienteController"/>
     <bean name="buscarPacienteController" class="controladores.BuscarPacienteController"/>
     <bean name="deleteExpedienteController" class="controladores.DeleteExpedienteController"/>
+    <bean name="signosVitalesController" class="controladores.SignosVitalesController"/>
+    <bean name="addSignosVitalesController" class="controladores.AddSignosVitalesController"/>
+    <bean name="buscarSignosVitalesController" class="controladores.BuscarSignosVitalesController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

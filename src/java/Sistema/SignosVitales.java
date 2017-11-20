@@ -3,6 +3,8 @@ package Sistema;
 
 
 public class SignosVitales {
+    
+    private Integer cod_sig;
     private String temp;
     private double altura;
     private String pres_Cardi;
@@ -12,7 +14,8 @@ public class SignosVitales {
     public SignosVitales() {
     }
 
-    public SignosVitales(String temp, double altura, String pres_Cardi, String pres_art, String Paciente) {
+    public SignosVitales(Integer cod_sig, String temp, double altura, String pres_Cardi, String pres_art, String Paciente) {
+        this.cod_sig = cod_sig;
         this.temp = temp;
         this.altura = altura;
         this.pres_Cardi = pres_Cardi;
@@ -20,7 +23,16 @@ public class SignosVitales {
         this.Paciente = Paciente;
     }
 
-     
+    public Integer getCod_sig() {
+        return cod_sig;
+    }
+
+    public void setCod_sig(Integer cod_sig) {
+        this.cod_sig = cod_sig;
+    }
+
+    
+
 
     public String getTemp() {
         return temp;
