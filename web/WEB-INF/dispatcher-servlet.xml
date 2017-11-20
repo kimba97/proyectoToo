@@ -67,6 +67,8 @@
                <prop key="consultas.htm">consultaController</prop>
                <prop key="buscarConsulta.htm">buscarConsultaController</prop>
                <prop key="editConsultas.htm">editConsultasController</prop>
+               <prop key="diagnosticos.htm">diagnosticoController</prop>
+               <prop key="addDiagnostico.htm">addDiagnosticoController</prop>
             </props>
         </property>
     </bean>
@@ -128,6 +130,8 @@
     <bean name="buscarConsultaController" class="controladores.BuscarConsultasController"/>
     <bean name="editConsultasController" class="controladores.EditConsultasController"/>
     <bean name="deleteConsultasController" class="controladores.DeleteConsultaController"/>
+    <bean name="diagnosticoController" class="controladores.DiagnosticoController"/>
+    <bean name="addDiagnosticoController" class="controladores.AddDiagnosticoController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
