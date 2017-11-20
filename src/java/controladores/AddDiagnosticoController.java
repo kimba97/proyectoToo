@@ -3,6 +3,7 @@ package controladores;
 
 import Sistema.Conectar;
 import Sistema.Diagnostico;
+import Sistema.DiagnosticoAddValidar;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class AddDiagnosticoController {
     
     private JdbcTemplate jdbcTemplate;
-   
+   DiagnosticoAddValidar validar;
+    
      public AddDiagnosticoController() {
-        Conectar con = new Conectar();
+        this.validar = new DiagnosticoAddValidar();
+         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
      
@@ -42,7 +45,7 @@ public class AddDiagnosticoController {
             HttpServletRequest request
         )
     {
-        //validar.validate(u, result);
+        validar.validate(u, result);
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();

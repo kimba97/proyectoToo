@@ -8,6 +8,7 @@ package controladores;
 import Sistema.Encriptacion;
 import Sistema.Conectar;
 import Sistema.Medicamentos;
+import Sistema.MedicamentosAddVAlidar;
 import Sistema.Usuario;
 import Sistema.UsuarioAddValidar;
 import javax.servlet.http.HttpServletRequest;
@@ -26,13 +27,13 @@ import org.springframework.web.servlet.ModelAndView;
  * @author josej
  */
 @Controller
-@RequestMapping("addUser.html")
+@RequestMapping("addMedicamento.htm")
 public class AddMedicamentoController {
-    //UsuarioAddValidar usuarioValidar;
+   MedicamentosAddVAlidar validar;
     private JdbcTemplate jdbcTemplate;
 
     public AddMedicamentoController() {
-        //this.usuarioValidar = new UsuarioAddValidar();
+        this.validar = new MedicamentosAddVAlidar();
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
@@ -56,8 +57,8 @@ public class AddMedicamentoController {
         )
     {
         
-        //this.usuarioValidar.validate(m, result);
-        /*m.setPsw(Encriptacion.Encriptar(m.getCod_Med());*/
+        validar.validate(m, result);
+       
         if(result.hasErrors())
         {
             ModelAndView mav = new ModelAndView();
