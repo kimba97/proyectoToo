@@ -5,10 +5,15 @@ import Sistema.Conectar;
 import Sistema.Empleado;
 import Sistema.Encriptacion;
 import Sistema.Usuario;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +38,7 @@ public class LoginController {
     }
     
      @RequestMapping(method = RequestMethod.POST)
-    public String submit(Model model, @ModelAttribute("Usuario") Usuario loginBean) {
+    public String submit(HttpServletRequest request, HttpServletResponse response,Model model, @ModelAttribute("Usuario") Usuario loginBean) throws ServletException, IOException {
         
         if ( loginBean.getUsuario().length()!= 0 && loginBean.getPsw().length()!= 0) {
             
@@ -41,6 +46,9 @@ public class LoginController {
             Empleado e = obtenerPuesto(loginBean.getUsuario());
             
             if (loginBean.getUsuario().equals(u.getUsuario()) && loginBean.getPsw().equals(u.getPsw())) {
+                //agregado por Luis para las cookiesession
+                doGet(request , response , e.getPuest_Emp());
+                
                 if (e.getPuest_Emp().equalsIgnoreCase("Doctor")) {
                     return "vistaMedico";
                  } else if (e.getPuest_Emp().equalsIgnoreCase("Fisioterapista")){
@@ -88,6 +96,28 @@ public class LoginController {
             }
             return e;
         }); 
+    }
+    
+    
+    //agregado por Luis para las cookiesession
+    //AQUI SE CREA LA COOKIE
+    /**
+     *
+     * @param request
+     * @param response
+     * @param username
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response, String puesto) throws ServletException, IOException {
+        //conseguir input values
+        String Puesto = puesto;
+
+        //make cookies and store new data in cookies
+        Cookie sessionCookie = new Cookie("sessionCookie", Puesto);
+        sessionCookie.setMaxAge(60*60*24*2);
+        sessionCookie.setPath("/");
+        response.addCookie(sessionCookie);
     }
     
 }

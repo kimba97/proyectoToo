@@ -71,6 +71,7 @@
                <prop key="addDiagnostico.htm">addDiagnosticoController</prop>
                <prop key="editarDiagnostico.htm">editDiagnosticoController</prop>
                <prop key="deleteDiag.htm">deleteDiagnosticoController</prop>
+               <prop key="vistaEnfermero.htm">vistaEnfermeroController</prop>
             </props>
         </property>
     </bean>
@@ -135,6 +136,7 @@
     <bean name="diagnosticoController" class="controladores.DiagnosticoController"/>
     <bean name="addDiagnosticoController" class="controladores.AddDiagnosticoController"/>
     <bean name="editDiagnosticoController" class="controladores.EditDiagnosticoController"/>
+    <bean name="vistaEnfermeroController" class="controladores.vistaEnfermeroController"/>
     <bean name="deleteDiagnosticoController" class="controladores.DeleteDiagnosticoController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

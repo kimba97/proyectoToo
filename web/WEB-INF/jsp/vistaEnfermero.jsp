@@ -1,7 +1,7 @@
 <%-- 
-    Document   : vistaFisioterapista
-    Created on : 11-18-2017, 11:44:23 PM
-    Author     : admin
+    Document   : vistaEnfermero
+    Created on : Nov 20, 2017, 5:49:18 AM
+    Author     : josej
 --%>
 
 <!DOCTYPE html>
@@ -57,29 +57,41 @@
                         <div class="container marketing">
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <a href="buscarExpediente.htm">
-                                        <img src="public/imagenes/expediente.ico" class="img-circle" width="100px" height="100px"/></a>
-                                    <li><a href="buscarExpediente.htm">Buscar Expediente</a></li>
-                                    <p>En este enlace se podrán buscar los expedientes de pacientes</p>
+                                    <a href="addPersona.htm">
+                                        <img src="public/imagenes/paciente.png" class="img-circle" width="100px" height="100px"/></a>
+                                    <li><a href="addPersona.htm">Agregar Persona</a></li>
+                                    <p>En este enlace se podrán añadir personas al sistema.</p>
                                 </div><!-- /.col-lg-4 -->
 
                                 <div class="col-lg-4">
-                                     <a href="editExpedientes.htm">
-                                         <img src="public/imagenes/expediente.ico" class="img-circle" width="100px" height="100px"/></a>
-                                    <li><a href="editExpedientes.htm">Editar Expediente</a></li> 
-                                    <p>En este enlace se podrán  editar los diferentes expedientes.</p>
-                                </div><!-- /.col-lg-4 -->
-
+                                    <a href="expedientes.htm">
+                                        <img src="public/imagenes/expediente.ico" class="img-circle" width="100px" height="100px"/> </a>
+                                    <li><a href="expedientes.htm">Empleados</a></li>
+                                    <p>En este enlace se podrán consultar, añadir, buscar, editar y eliminar los expedientes de los pacientes.</p>
+                                </div>
+                                
                                 <div class="col-lg-4">
-                                     <a href="buscarPaciente.htm">
+                                     <a href="pacientes.htm">
                                          <img src="public/imagenes/paciente.png" class="img-circle" width="100px" height="100px"/></a>
-                                    <li><a href="buscarPaciente.htm">Buscar Pacientes</a></li>
-                                    <p>En este enlace se podrán  buscar los diferentes pacientes registrados en el sistema.</p>
+                                    <li><a href="pacientes.htm">Pacientes</a></li>
+                                    <p>En este enlace se podrán consulta, añadir, buscar, editar y eliminar los diferentes pacientes registrados en el sistema.</p>
                                 </div><!-- /.col-lg-4 -->
                             </div>
                         </div>
                         <br>
                         <br> 
+                        <div class="container marketing">
+                            <div class="row">
+                                
+
+                                <div class="col-lg-4">
+                                    <a href="consulta.htm">
+                                        <img src="public/imagenes/consulta.png" class="img-circle" width="100px" height="100px"/></a>
+                                    <li><a href="consulta.htm">Consultas</a></li>
+                                     <p>En este enlace se podrán consultar, añadir, buscar, editar y eliminar las consultas asignadas a los diferentes pacientes pertenecientes a las clinicas.</p>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>
