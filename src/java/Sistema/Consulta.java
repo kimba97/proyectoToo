@@ -16,7 +16,7 @@ public class Consulta {
     private String cod_Cons;
     private String sintom;
     private String trat_Med;
-    private Date fecha_Cons;
+    private String fecha_Cons;
     private String hora_Cons;
     private String doctor_Cons;
     private String CodSign;
@@ -24,7 +24,7 @@ public class Consulta {
     public Consulta() {
     }
 
-    public Consulta(String cod_Cons, String sintom, String trat_Med, Date fecha_Cons, String hora_Cons, String doctor_Cons, String CodSign) {
+    public Consulta(String cod_Cons, String sintom, String trat_Med, String fecha_Cons, String hora_Cons, String doctor_Cons, String CodSign) {
         this.cod_Cons = cod_Cons;
         this.sintom = sintom;
         this.trat_Med = trat_Med;
@@ -63,11 +63,11 @@ public class Consulta {
         this.trat_Med = trat_Med;
     }
 
-    public Date getFecha_Cons() {
+    public String getFecha_Cons() {
         return fecha_Cons;
     }
 
-    public void setFecha_Cons(Date fecha_Cons) {
+    public void setFecha_Cons(String fecha_Cons) {
         this.fecha_Cons = fecha_Cons;
     }
 

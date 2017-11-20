@@ -24,6 +24,7 @@
                <prop key="addUser.htm">addUserController</prop> 
                <prop key="deleteUser.htm">deleteUserController</prop>
                <prop key="deletePaciente.htm">deletePacienteController</prop>
+               <prop key="deleteSignos.htm">deleteSignosController</prop>
                <prop key="editUser.htm">editUserController</prop>  
                <prop key="medicamentos.htm">medicamentoController</prop>
                <prop key="addMedicamento.htm">addMedicamentoController</prop> 
@@ -57,6 +58,7 @@
               <prop key="signosVitales.htm">signosVitalesController</prop>
               <prop key="addSignosVitales.htm">addSignosVitalesController</prop>
               <prop key="buscarSignosVitales.htm">buscarSignosVitalesController</prop>
+              <prop key="addConsulta.htm">addConsultaController</prop>
               <prop key="editSignosVitales.htm">editSignosVitalesController</prop>
                <prop key="buscarDoctor.htm">BuscarDoctorController</prop>
                <prop key="editDoctor.htm">EditDoctorController</prop>
@@ -78,6 +80,7 @@
     <bean name="userController" class="controladores.UserController"/>
     <bean name="addUserController" class="controladores.AddUserController"/>
     <bean name="deleteUserController" class="controladores.DeleteUserController"/>
+    <bean name="deleteSignosController" class="controladores.DeleteSignosVitalesController"/>
     <bean name="editUserController" class="controladores.EditUserController"/> 
     <bean name="medicamentoController" class="controladores.MedicamentoController"/>
     <bean name="addMedicamentoController" class="controladores.AddMedicamentoController"/>
@@ -116,6 +119,7 @@
     <bean name="BuscarDoctorController" class="controladores.BuscarDoctorController"/>
     <bean name="EditDoctorController" class="controladores.EditDoctorController"/>
     <bean name="DeleteDoctorController" class="controladores.DeleteDoctorController"/>
+    <bean name="addConsultaController" class="controladores.AddConsultaController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

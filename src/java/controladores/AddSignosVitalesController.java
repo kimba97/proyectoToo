@@ -1,11 +1,16 @@
 
 package controladores;
 
+import Sistema.Clinica;
 import Sistema.SignosVitales;
 import Sistema.Conectar;
 import Sistema.SignosVitalesAddValidar;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,7 +62,14 @@ public class AddSignosVitalesController {
         {
             if(ObtenerSignos().isEmpty() == true){
                 s.setCod_sig(1);
-            }else {s.setCod_sig(ObtenerSignos().size()+1);}
+            }else{
+                SignosVitales si = selectSignos(ObtenerSignos().size()+1);
+                if(si == null){
+                    s.setCod_sig(ObtenerSignos().size()+1);
+                }else{
+                    s.setCod_sig(si.getCod_sig()+1);
+                }
+            }
             
             this.jdbcTemplate.update(
             "insert into signos_vitales(cod_sin, cod_pac, temp, altura, pres_cardi, pres_art) values (?,?, ?, ?, ?, ?)",
@@ -68,6 +80,26 @@ public class AddSignosVitalesController {
         
     }
     
+        public SignosVitales selectSignos(int cod_sin) 
+    {
+        final SignosVitales clini = new SignosVitales();
+        String quer = "SELECT * FROM signos_vitales WHERE cod_sin="+cod_sin+"";
+        return (SignosVitales) jdbcTemplate.query
+        (
+                quer, new ResultSetExtractor<SignosVitales>() 
+            {
+                public SignosVitales extractData(ResultSet rs) throws SQLException, DataAccessException {
+                    if (rs.next()) {
+                        
+                        clini.setCod_sig(rs.getInt("cod_sin"));
+                    }
+                    return clini;
+                }
+
+
+            }
+        );
+    }
       
         public List ObtenerSignos()
         {
