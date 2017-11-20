@@ -57,6 +57,7 @@
               <prop key="signosVitales.htm">signosVitalesController</prop>
               <prop key="addSignosVitales.htm">addSignosVitalesController</prop>
               <prop key="buscarSignosVitales.htm">buscarSignosVitalesController</prop>
+              <prop key="editSignosVitales.htm">editSignosVitalesController</prop>
             </props>
         </property>
     </bean>
@@ -108,6 +109,7 @@
     <bean name="signosVitalesController" class="controladores.SignosVitalesController"/>
     <bean name="addSignosVitalesController" class="controladores.AddSignosVitalesController"/>
     <bean name="buscarSignosVitalesController" class="controladores.BuscarSignosVitalesController"/>
+    <bean name="editSignosVitalesController" class="controladores.EditSignosVitales"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />

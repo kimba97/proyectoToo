@@ -16,8 +16,6 @@ public class SignosVitalesAddValidar implements Validator {
      @Override
         public void validate(Object o, Errors errors) {
         SignosVitales signVi = (SignosVitales)o; 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cod_sig", 
-        "required.cod_sig","El campo  es obligatorio");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "temp", 
         "required.temp","El campo Temperatura es obligatorio");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "altura", 

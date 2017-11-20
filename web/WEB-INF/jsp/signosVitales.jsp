@@ -42,7 +42,7 @@
                                 <td> <c:out value="${dato.pres_art}"/> </td>
                                 <td>
                                    <!-- Pendiente-->
-                                  <a href="<c:out value="editUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                  <a href="<c:out value="editSignosVitales.htm?id=${dato.cod_sin}"/>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                   <a href="<c:out value="deleteUser.htm?id=${dato.username}"/>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                 </td>
                             </tr>

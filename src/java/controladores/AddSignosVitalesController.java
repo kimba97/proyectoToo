@@ -38,6 +38,7 @@ public class AddSignosVitalesController {
     }
     
     @RequestMapping(method=RequestMethod.POST)
+    @SuppressWarnings("empty-statement")
     public ModelAndView form
         (
             @ModelAttribute("signos") SignosVitales s,
@@ -54,7 +55,10 @@ public class AddSignosVitalesController {
             return mav;
         }else
         {
-            s.setCod_sig(ObtenerSignos().size()+1);
+            if(ObtenerSignos().isEmpty() == true){
+                s.setCod_sig(1);
+            }else {s.setCod_sig(ObtenerSignos().size()+1);}
+            
             this.jdbcTemplate.update(
             "insert into signos_vitales(cod_sin, cod_pac, temp, altura, pres_cardi, pres_art) values (?,?, ?, ?, ?, ?)",
             s.getCod_sig(),s.getPaciente(),s.getTemp(),s.getAltura(),s.getPres_art(),s.getPres_Cardi());
